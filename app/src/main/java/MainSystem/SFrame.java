@@ -13,14 +13,16 @@ public class SFrame extends JFrame {
 
     public SFrame() {
         initComponents();
-        // setIconImage(new ImageIcon(getClass().getResource("/Icons/main.png")).getImage());
+        // setIconImage(new
+        // ImageIcon(getClass().getResource("/Icons/main.png")).getImage());
 
         setLocationRelativeTo(null);
         setExtendedState(this.getExtendedState() | JFrame.MAXIMIZED_BOTH);
         setListeners();
     }
 
-// Methods ===================================================================================================
+    // Methods
+    // ===================================================================================================
     private void setListeners() {
         KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher((KeyEvent evt) -> {
             if (SFrame.getKeyLock()) {
@@ -55,7 +57,8 @@ public class SFrame extends JFrame {
         repaint();
     }
 
-// Static Methods ============================================================================================
+    // Static Methods
+    // ============================================================================================
     private static boolean keyLock = false;
 
     public static void setKeyLock(boolean keyLock) {
@@ -66,7 +69,8 @@ public class SFrame extends JFrame {
         return keyLock;
     }
 
-// Generated =================================================================================================
+    // Generated
+    // =================================================================================================
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -74,15 +78,17 @@ public class SFrame extends JFrame {
         setBackground(new java.awt.Color(9, 12, 16));
         setIconImages(null);
         addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
             public void windowClosing(java.awt.event.WindowEvent evt) {
-                formWindowClosing(evt);
+                formWindowClosing();
             }
         });
 
         pack();
     }
 
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+    // Parameter evt is required by WindowListener interface
+    private void formWindowClosing() {// GEN-FIRST:event_formWindowClosing
         Database.closeConnection();
         ExecutorDriver.closeExecutor();
     }

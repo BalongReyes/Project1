@@ -10,6 +10,7 @@ plugins {
     application
 }
 
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
@@ -23,6 +24,9 @@ dependencies {
 
     // This dependency is used by the application.
     implementation(libs.guava)
+
+    // MySQL Connector JAR dependency
+    implementation("com.mysql:mysql-connector-j:8.4.0")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -34,7 +38,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "project1.App"
+    mainClass = "MainSystem.Main"
 }
 
 tasks.named<Test>("test") {

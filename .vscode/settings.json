@@ -1,0 +1,12 @@
+{
+  "java.project.referencedLibraries": [
+    "app/build/libs/**"
+  ],
+  "java.import.gradle.enabled": true,
+  "java.gradle.wrapper.enabled": true,
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.errors.incompleteClasspath.severity": "warning",
+  "[java]": {
+    "editor.formatOnSave": true
+  }
+}
