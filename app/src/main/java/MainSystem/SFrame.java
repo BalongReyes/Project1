@@ -1,28 +1,25 @@
+
 package MainSystem;
 
+import DatabaseSystem.Database;
 import java.awt.AWTEvent;
 import java.awt.KeyboardFocusManager;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
-
 import javax.swing.JFrame;
-
-import DatabaseSystem.Database;
 
 public class SFrame extends JFrame {
 
     public SFrame() {
         initComponents();
-        // setIconImage(new
-        // ImageIcon(getClass().getResource("/Icons/main.png")).getImage());
-
+        
         setLocationRelativeTo(null);
         setExtendedState(this.getExtendedState() | JFrame.MAXIMIZED_BOTH);
         setListeners();
     }
-
-    // Methods
-    // ===================================================================================================
+    
+// Methods ===================================================================================================
+    
     private void setListeners() {
         KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher((KeyEvent evt) -> {
             if (SFrame.getKeyLock()) {
@@ -57,8 +54,8 @@ public class SFrame extends JFrame {
         repaint();
     }
 
-    // Static Methods
-    // ============================================================================================
+// Static Methods ============================================================================================
+    
     private static boolean keyLock = false;
 
     public static void setKeyLock(boolean keyLock) {
@@ -69,28 +66,39 @@ public class SFrame extends JFrame {
         return keyLock;
     }
 
-    // Generated
-    // =================================================================================================
+// Generated =================================================================================================
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Test");
-        setBackground(new java.awt.Color(9, 12, 16));
-        setIconImages(null);
         addWindowListener(new java.awt.event.WindowAdapter() {
-            @Override
             public void windowClosing(java.awt.event.WindowEvent evt) {
-                formWindowClosing();
+                formWindowClosing(evt);
             }
         });
 
-        pack();
-    }
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
-    // Parameter evt is required by WindowListener interface
-    private void formWindowClosing() {// GEN-FIRST:event_formWindowClosing
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         Database.closeConnection();
         ExecutorDriver.closeExecutor();
-    }
+    }//GEN-LAST:event_formWindowClosing
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // End of variables declaration//GEN-END:variables
 
 }
