@@ -8,6 +8,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
+    id("org.graalvm.buildtools.native") version "0.10.1"
 }
 
 
@@ -44,4 +45,28 @@ application {
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+graalvmNative {
+    binaries {
+        named("main") {
+            imageName.set("Project1App") // The name of your final executable
+            mainClass.set("MainSystem.Main") // Points to your Main.java
+            
+            buildArgs.addAll(
+                "--gui",                      // Required for Windows/macOS GUI apps
+                "--no-fallback",              // Ensures a standalone binary is created
+                "-H:+AddAllCharsets",         // Often needed for database drivers
+                "--initialize-at-build-time=ConsoleSystem.ConsoleColors" // Optional optimization
+            )
+
+            javaLauncher.set(javaToolchains.launcherFor {
+                languageVersion.set(JavaLanguageVersion.of(21)) // Match your project version
+                vendor.set(JvmVendorSpec.GRAAL_VM)
+            })
+        }
+    }
+    metadataRepository {
+        enabled.set(true)
+    }
 }
