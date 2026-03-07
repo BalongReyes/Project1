@@ -7,8 +7,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.LinearGradientPaint;
-import java.awt.geom.RoundRectangle2D;
 import java.beans.BeanProperty;
 import java.beans.JavaBean;
 
@@ -39,16 +37,6 @@ public class LoginPanelContainer extends SPanel{
     public void paint(Graphics g){
         Graphics2D g2 = CustomGraphics.getGraphics2D(g);
         Dimension s = getSize();
-
-        g2.setPaint(new LinearGradientPaint(0, 50, 338, 430, 
-            new float[]{0f, .5f, 1f}, 
-            new Color[]{new Color(15, 82, 156), new Color(28, 34, 115), new Color(15, 82, 156)}
-        ));
-        if(rounded){
-            g2.fill(new RoundRectangle2D.Double(0, 0, 338, 530, radius, radius));
-        }else{
-            g2.fill(new RoundRectangle2D.Double(0, 0, 338, 530, 0, 0));
-        }
         
         g2.setColor(line);
         g2.fillRoundRect(0, 20, 4, (s.height - 40), 4, 4);

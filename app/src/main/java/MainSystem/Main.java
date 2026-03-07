@@ -12,6 +12,10 @@ public class Main {
 
         SFrame frame = new SFrame();
         frame.setVisible(true);
+        
+        Manager.setDefault(frame);
+        frame.initShowDefaultLayer();
+        frame.setVisible(true);
     }
 
 }

@@ -64,7 +64,8 @@ graalvmNative {
                 "--gui",
                 "--no-fallback",
                 "-H:+AddAllCharsets",
-                "-H:IncludeResources=Icons/.*" // Add this line to include your icons
+                // Add this line to include the Icons directory in the native binary
+                "-H:IncludeResources=Icons/.*" 
             )
 
             javaLauncher.set(javaToolchains.launcherFor {
