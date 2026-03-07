@@ -3,7 +3,7 @@
 <Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="title" type="java.lang.String" value="Inventory Master"/>
+    <Property name="title" type="java.lang.String" value="Avida Prime Taft"/>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="10" green="c" red="9" type="rgb"/>
     </Property>
@@ -11,6 +11,9 @@
       <ComponentRef name="null"/>
     </Property>
   </Properties>
+  <AccessibilityProperties>
+    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Avida Prime Taft"/>
+  </AccessibilityProperties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
@@ -37,7 +40,7 @@
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               <Component id="heroMenuPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-              <Component id="heroMenuPanel1" min="-2" max="-2" attributes="0"/>
+              <Component id="heroMenuPanelCollapsed" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               <Component id="heroLayeredPane" pref="1271" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
@@ -48,7 +51,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="heroLayeredPane" max="32767" attributes="0"/>
           <Component id="heroMenuPanel" alignment="0" max="32767" attributes="0"/>
-          <Component id="heroMenuPanel1" alignment="1" pref="908" max="32767" attributes="0"/>
+          <Component id="heroMenuPanelCollapsed" alignment="1" pref="908" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -95,11 +98,6 @@
           </Layout>
           <SubComponents>
             <Component class="FrameSystem.LoginGroup.ModuleLogin" name="moduleLogin">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="ff" type="rgb"/>
-                </Property>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -132,7 +130,7 @@
         </DimensionLayout>
       </Layout>
     </Container>
-    <Container class="FrameSystem.HeroGroup.Components.HeroMenuPanel" name="heroMenuPanel1">
+    <Container class="FrameSystem.HeroGroup.Components.HeroMenuPanel" name="heroMenuPanelCollapsed">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="25" green="1d" red="18" type="rgb"/>

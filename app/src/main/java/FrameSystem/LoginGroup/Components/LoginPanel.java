@@ -2,19 +2,16 @@
 package FrameSystem.LoginGroup.Components;
 
 import FrameSystem.SComponents.SPanel;
+import MainSystem.CustomGraphics;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Image;
+import java.awt.Graphics2D;
 import java.beans.BeanProperty;
 import java.beans.JavaBean;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 
 @JavaBean(description = "A component that displays the login panel")
 public class LoginPanel extends SPanel{
-
-    private Icon backgroundIcon;
-    private Image backgroundImage;
     
 // Constructor ===============================================================================================
     
@@ -24,24 +21,28 @@ public class LoginPanel extends SPanel{
     
 // Setters and Getters =======================================================================================
 
-    @BeanProperty(preferred = true, visualUpdate = true, description = "The icon this component will display.")
-    public void setBackgroundImage(Icon backgroundIcon){
-        this.backgroundIcon = backgroundIcon;
-        this.backgroundImage = ((ImageIcon)backgroundIcon).getImage();
+    private Color line = new Color(255, 255, 255);
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    public void setLine(Color line){
+        this.line = line;
     }
 
-    public Icon getBackgroundImage(){
-        return backgroundIcon;
+    public Color getLine(){
+        return line;
     }
     
 // Overrided Methods =========================================================================================
-
+    
     @Override
     public void paint(Graphics g){
+        Graphics2D g2 = CustomGraphics.getGraphics2D(g);
+        Dimension s = getSize();
+        
         super.paint(g);
         
-        Dimension s = getSize();
-        g.drawImage(backgroundImage, 0, (s.height - 99), this);
+        g2.setColor(line);
+        g2.fillRoundRect(0, 60, 4, (s.height - 120), 4, 4);
     }
-
+    
 }

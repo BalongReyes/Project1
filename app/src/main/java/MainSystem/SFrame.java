@@ -30,7 +30,7 @@ public class SFrame extends JFrame {
         setListeners();
         
         heroMenuPanel.setVisible(false);
-        heroMenuPanel1.setVisible(false);
+        heroMenuPanelCollapsed.setVisible(false);
     }
 
     public void initShowDefaultLayer(){
@@ -198,10 +198,10 @@ public class SFrame extends JFrame {
         heroLayer_Login = new FrameSystem.HeroGroup.Components.HeroLayer();
         moduleLogin = new FrameSystem.LoginGroup.ModuleLogin();
         heroMenuPanel = new FrameSystem.HeroGroup.Components.HeroMenuPanel();
-        heroMenuPanel1 = new FrameSystem.HeroGroup.Components.HeroMenuPanel();
+        heroMenuPanelCollapsed = new FrameSystem.HeroGroup.Components.HeroMenuPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Inventory Master");
+        setTitle("Avida Prime Taft");
         setBackground(new java.awt.Color(9, 12, 16));
         setIconImages(null);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -214,8 +214,6 @@ public class SFrame extends JFrame {
 
         heroLayer_Login.setBackground(new java.awt.Color(254, 241, 241));
         heroLayer_Login.setName("Login"); // NOI18N
-
-        moduleLogin.setBackground(new java.awt.Color(255, 204, 204));
 
         javax.swing.GroupLayout heroLayer_LoginLayout = new javax.swing.GroupLayout(heroLayer_Login);
         heroLayer_Login.setLayout(heroLayer_LoginLayout);
@@ -251,19 +249,19 @@ public class SFrame extends JFrame {
             .addGap(0, 908, Short.MAX_VALUE)
         );
 
-        heroMenuPanel1.setBackground(new java.awt.Color(24, 29, 37));
-        heroMenuPanel1.setBorderColor(new java.awt.Color(30, 36, 46));
-        heroMenuPanel1.setBorderLine(2);
-        heroMenuPanel1.setPreferredSize(new java.awt.Dimension(80, 0));
+        heroMenuPanelCollapsed.setBackground(new java.awt.Color(24, 29, 37));
+        heroMenuPanelCollapsed.setBorderColor(new java.awt.Color(30, 36, 46));
+        heroMenuPanelCollapsed.setBorderLine(2);
+        heroMenuPanelCollapsed.setPreferredSize(new java.awt.Dimension(80, 0));
 
-        javax.swing.GroupLayout heroMenuPanel1Layout = new javax.swing.GroupLayout(heroMenuPanel1);
-        heroMenuPanel1.setLayout(heroMenuPanel1Layout);
-        heroMenuPanel1Layout.setHorizontalGroup(
-            heroMenuPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout heroMenuPanelCollapsedLayout = new javax.swing.GroupLayout(heroMenuPanelCollapsed);
+        heroMenuPanelCollapsed.setLayout(heroMenuPanelCollapsedLayout);
+        heroMenuPanelCollapsedLayout.setHorizontalGroup(
+            heroMenuPanelCollapsedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 80, Short.MAX_VALUE)
         );
-        heroMenuPanel1Layout.setVerticalGroup(
-            heroMenuPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        heroMenuPanelCollapsedLayout.setVerticalGroup(
+            heroMenuPanelCollapsedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 908, Short.MAX_VALUE)
         );
 
@@ -275,7 +273,7 @@ public class SFrame extends JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(heroMenuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(heroMenuPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(heroMenuPanelCollapsed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(heroLayeredPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1271, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
@@ -284,8 +282,10 @@ public class SFrame extends JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(heroLayeredPane)
             .addComponent(heroMenuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(heroMenuPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 908, Short.MAX_VALUE)
+            .addComponent(heroMenuPanelCollapsed, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 908, Short.MAX_VALUE)
         );
+
+        getAccessibleContext().setAccessibleName("Avida Prime Taft");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -299,7 +299,7 @@ public class SFrame extends JFrame {
     public FrameSystem.HeroGroup.Components.HeroLayer heroLayer_Login;
     private javax.swing.JLayeredPane heroLayeredPane;
     public FrameSystem.HeroGroup.Components.HeroMenuPanel heroMenuPanel;
-    public FrameSystem.HeroGroup.Components.HeroMenuPanel heroMenuPanel1;
+    public FrameSystem.HeroGroup.Components.HeroMenuPanel heroMenuPanelCollapsed;
     private FrameSystem.LoginGroup.ModuleLogin moduleLogin;
     // End of variables declaration//GEN-END:variables
 

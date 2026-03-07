@@ -54,7 +54,7 @@ public class ManagerLogin extends Manager {
     public static void logoutAccount() {
         accountLoggedIn = null;
         frame.heroMenuPanel.setVisible(false);
-        frame.heroMenuPanel1.setVisible(false);
+        frame.heroMenuPanelCollapsed.setVisible(false);
         HeroLayer.showLayer(frame.heroLayer_Login);
 //        frame.loginUsernameField.requestFocus();
 
