@@ -60,6 +60,13 @@ graalvmNative {
                 "--initialize-at-build-time=ConsoleSystem.ConsoleColors" // Optional optimization
             )
 
+            buildArgs.addAll(
+                "--gui",
+                "--no-fallback",
+                "-H:+AddAllCharsets",
+                "-H:IncludeResources=Icons/.*" // Add this line to include your icons
+            )
+
             javaLauncher.set(javaToolchains.launcherFor {
                 languageVersion.set(JavaLanguageVersion.of(21)) // Match your project version
                 vendor.set(JvmVendorSpec.GRAAL_VM)
@@ -69,4 +76,11 @@ graalvmNative {
     metadataRepository {
         enabled.set(true)
     }
+}
+
+tasks.register("cleanRun") {
+    group = "application"
+    description = "Runs a clean build and then executes the application."
+    dependsOn("clean") // Ensures the 'build' directory is deleted first
+    finalizedBy("run") // Triggers the 'run' task after 'clean' completes
 }
