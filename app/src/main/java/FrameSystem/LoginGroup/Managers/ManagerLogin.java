@@ -7,63 +7,19 @@ import DatabaseSystem.AccountsData.AccountsDataTable;
 import DatabaseSystem.SettingsData.SettingsDataHandler;
 import DatabaseSystem.SettingsData.SettingsDataTable;
 import FrameSystem.HeroGroup.Components.HeroLayer;
-import FrameSystem.SideBarGroup.Managers.ManagerSideBar;
 import MainSystem.Manager;
 
 public class ManagerLogin extends Manager {
 
     public static void initDefault() {
         resetUI();
-//        frame.heroLayer_Login.addLayeredPanelShowListener(evt -> {
-//            resetUI();
-//            frame.loginUsernameField.requestFocus();
-//        });
-//
-//        frame.loginButton.addMouseListener((MouseClickedAdaptor) evt -> {
-//            loginAccount();
-//        });
-//
-//        MouseListener m = (MouseClickedAdaptor) evt -> {
-//            logoutAccount();
-//        };
-//        frame.logoutButton.addMouseListener(m);
-//        frame.logoutButton1.addMouseListener(m);
-//
-//        frame.loginUsernameField.addActionListener(evt -> {
-//            frame.loginPasswordField.requestFocus();
-//        });
-//        frame.loginPasswordField.addActionListener(evt -> {
-//            loginAccount();
-//        });
-//
-//        frame.loginUsernameField.addFocusListener(new FocusAdapter() {
-//            @Override
-//            public void focusLost(FocusEvent evt) {
-//                if (!frame.loginUsernameField.getText().isEmpty()) {
-//                    frame.loginError1.setVisible(false);
-//                }
-//            }
-//        });
-//        frame.loginPasswordField.addFocusListener(new FocusAdapter() {
-//            @Override
-//            public void focusLost(FocusEvent evt) {
-//                if (frame.loginPasswordField.getPassword().length != 0) {
-//                    frame.loginError2.setVisible(false);
-//                }
-//            }
-//        });
     }
 
     private static void resetUI() {
-//        frame.loginError1.setVisible(false);
-//        frame.loginError2.setVisible(false);
-//        frame.loginError3.setVisible(false);
-//        frame.loginUsernameField.setText("");
-//        frame.loginPasswordField.setText("");
-//        frame.loginPasswordField.showPassword(false);
     }
 
 // Methods ===================================================================================================
+    
     private static AccountsDataTable accountLoggedIn = null;
 
     public static AccountsDataTable getAccountLoggedIn() {
@@ -75,7 +31,6 @@ public class ManagerLogin extends Manager {
             return;
         }
         ManagerLogin.accountLoggedIn = accountLoggedIn;
-        ManagerSideBar.changeAccount(accountLoggedIn);
     }
 
     public static boolean isLoggedIn() {

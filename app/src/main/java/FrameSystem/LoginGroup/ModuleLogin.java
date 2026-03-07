@@ -18,7 +18,7 @@ public class ModuleLogin extends SPanel{
         FrameSystem.SComponents.SPanel sPanelLeft = new FrameSystem.SComponents.SPanel();
         FrameSystem.SComponents.SLabel sLabel25 = new FrameSystem.SComponents.SLabel();
 
-        setBackground(new java.awt.Color(255, 102, 102));
+        setBackground(new java.awt.Color(255, 204, 204));
         setRadius(20);
         setRounded(true);
         setMinimumSize(new java.awt.Dimension(820, 530));
@@ -75,10 +75,7 @@ public class ModuleLogin extends SPanel{
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(sPanelRIght, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(sPanelLeft, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+            .addComponent(sPanelLeft, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
